@@ -14,11 +14,3 @@
 #include <AzCore/Math/Internal/MathTypes_Platform.h>
 #include <AzCore/Math/MathUtils.h>
 #include <AzCore/Math/SimdMath.h>
-
-#if !difined(O3DE_INITIALIZE_MATH_TYPES_SIGNALING_NAN)
-    #if defined(AZ_DEBUG_BUILD)
-        #define O3DE_INITIALIZE_MATH_TYPES_SIGNALING_NAN true
-    #else
-        #define O3DE_INITIALIZE_MATH_TYPES_SIGNALING_NAN false
-    #endif
-#endif

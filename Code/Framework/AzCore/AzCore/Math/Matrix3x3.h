@@ -35,25 +35,8 @@ namespace AZ
         //! @param context reflection context
         static void Reflect(ReflectContext* context);
 
-        
-        #if AZ_DEBUG_BUILD
-            Matrix3x3() : m_rows {
-                Vector3(std::numeric_limits<float>::signaling_NaN(),
-                std::numeric_limits<float>::signaling_NaN(),
-                std::numeric_limits<float>::signaling_NaN()),
-                Vector3(std::numeric_limits<float>::signaling_NaN(),
-                std::numeric_limits<float>::signaling_NaN(),
-                std::numeric_limits<float>::signaling_NaN()),
-                Vector3(std::numeric_limits<float>::signaling_NaN(),
-                std::numeric_limits<float>::signaling_NaN(),
-                std::numeric_limits<float>::signaling_NaN())
-            }
-
-        #else
-            //! Default constructor does not initialize the matrix.
-            Matrix3x3() = default;
-        #endif
-
+        //! Default constructor does not initialize the matrix.
+        Matrix3x3() = default;
         Matrix3x3(const Matrix3x3& rhs) = default;
 
         Matrix3x3(Simd::Vec3::FloatArgType row0, Simd::Vec3::FloatArgType row1, Simd::Vec3::FloatArgType row2);
